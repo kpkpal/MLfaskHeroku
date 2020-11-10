@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<head>
+	<!-- Required meta tags -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    	<!-- Bootstrap CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    	
+	{% if title %}
+        	<title>{{ title }}</title>
+    	{% else %}
+        	<title>AFPL</title>
+    	{% endif %}
+
+</head>
+	
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="/">Welcome to Machine Learning Project Demonstration</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+<!--
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="/"> Home</a>
+              <a class="nav-item nav-link" href="/about"> About</a>
+            </div>
+-->
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/home">Linear Regression</a>
+              <a class="nav-item nav-link" href="/logr">Logistic Regression</a>
+              <a class="nav-item nav-link" href="/contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+	<br></br>
+        <div class="container">
+        </div>
+	    <a class="weatherwidget-io" href="https://forecast7.com/en/43d65n79d38/toronto/" data-label_1="Today's Weather" data-label_2="TORONTO" data-icons="Climacons Animated" data-days="5" data-theme="marine" >TORONTO WEATHER</a>
+    	    <a>Built by: Karthik Palaniswamy | Location:Toronto,ON | Project No: 05 | Today's Date: <a id="date"</a> </a> 
+	    <br></br>
+          <div class="tab">
+	    	<!--<button class="tablinks" onclick="openTab(event, 'Project-Tools')">Linear Regression</button>-->
+	    	<!--<button class="tablinks" onclick="openTab(event, 'Summary')">Object Detection</button>-->
+  	    	<!--<button class="tablinks" onclick="openTab(event, 'Field-Map')">Other</button> -->
+          </div>
+
+    </header>
+	<div class="container">
+      		{% block index %}
+      		{% endblock %}
+	</div>
+<br>
+<br>
+</body>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');</script>
+        <script>
+          n =  new Date();
+          y = n.getFullYear();
+          m = n.getMonth() + 1;
+          d = n.getDate();
+          document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+        </script>
+
+</html>
