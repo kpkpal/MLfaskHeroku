@@ -3,7 +3,7 @@ flask_sqlalchemy
 SQLAlchemy
 tensorflow
 numpy
-opencv
+opencv-python
 pickle
 pandas
 sklearn.model_selection
