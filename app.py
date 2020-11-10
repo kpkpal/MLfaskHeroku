@@ -1,13 +1,11 @@
 import os
+import numpy as np
 from flask import Flask, request, jsonify, render_template, send_from_directory, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
-import tensorflow as tf
-import numpy as np
-import cv2
 import pickle
-
 import pandas as pd
 from pandas import Series, DataFrame
+
 from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LogisticRegression
 
